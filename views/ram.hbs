@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{>styles}}
+    <div class="cards">
+        {{#each RAMarray}}
+            <div class="card">
+                <p>RAM memory type: {{this.RAM_memory_type}}</p>    
+                <p>Size: {{this.RAM_size}}</p>    
+                <p>price: {{this.RAM_price}}</p>    
+                <button type="submit">add</button>
+            </div>
+        {{/each}}
+    </div>
+    
+    <script src="../index.js"></script>
+</body>
+</html>
