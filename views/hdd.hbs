@@ -11,9 +11,10 @@
     <div class="cards">
         {{#each HDDarray}}
             <div class="card">
+                <input type="number" value="{{this.hdd_id}}" name="hdd_id" hidden>
                 <p>HDD size: {{this.HDD_size}}</p>    
                 <p>Price: {{this.HDD_price}}</p>    
-                <button type="submit">add</button>
+                <button type="submit" onclick="addHDD({{this.hdd_id}})">add</button>
             </div>    
         {{/each}}
     </div>

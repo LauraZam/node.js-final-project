@@ -63,3 +63,15 @@ exports.getMouse = function (request, response) {
         })
     })
 }
+
+function addHDD(hdd_id) {
+    let hddId = request.body.hdd_id
+    pool.query(`insert into users(hdd_id) values ($1)`, [hdd_id], function (error, result) {
+        if (error) {
+            console.log("error: " + error);
+        }
+        response.render("hdd.hbs", {
+            
+        })
+    })
+}
