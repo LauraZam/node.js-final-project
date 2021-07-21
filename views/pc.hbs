@@ -5,25 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
     {{>styles}}
-    <div class="card">
-        <input type="text" placeholder="name" id="user">
-        <p id="price"></p>
-        <button onclick=""></button>
-    </div>
+    {{>header}}
     
+    <div class="card">
+        <input type="text" placeholder="name" id="user" name="username">
+        <p id="price"></p>
+        <button onclick="buy()">buy</button>
+    </div>
+    <div id="cart">
+
+    </div>
     <script>
-        let hddPrice = localStorage.getItem("hddPrice")
-        let cpuPrice = localStorage.getItem("cpuPrice")
-        let ramPrice = localStorage.getItem("ramPrice")
-        let kbrdPrice = localStorage.getItem("kbrdPrice")
-        let mousePrice = localStorage.getItem("mousePrice")
-        let price = Number(hddPrice + cpuPrice + ramPrice + kbrdPrice + mousePrice)
-        let nameInput = document.getElementById("user")
+        let hddPrice = Number(localStorage.getItem("hddPrice"))
+        let cpuPrice = Number(localStorage.getItem("cpuPrice"))
+        let ramPrice = Number(localStorage.getItem("ramPrice"))
+        let kbrdPrice = Number(localStorage.getItem("kbrdPrice"))
+        let mousePrice = Number(localStorage.getItem("mousePrice"))
+        let price = hddPrice + cpuPrice + ramPrice + kbrdPrice + mousePrice
         let pricePar = document.getElementById("price")
         pricePar.innerText = price;
+        function buy(pricePar){
+            let nameInput = document.getElementById("user").value
+            let cart = document.getElementById("cart");
+            cart.append(`
+                <p>${nameInput}, покупка на сумму ${price} успешно совершена.</p>
+                <p></p>
+
+            `)
+                localStorage.removeItem("hddPrice")
+                localStorage.removeItem("cpuPrice")
+                localStorage.removeItem("ramPrice")
+                localStorage.removeItem("kbrdPrice")
+                localStorage.removeItem("mousePrice")
+                localStorage.setItem("price", price)
+                localStorage.setItem("username", nameInput)
+        }
     </script>
 </body>
 </html>

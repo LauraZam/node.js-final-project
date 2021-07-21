@@ -67,3 +67,4 @@ exports.getMouse = function (request, response) {
 exports.getPC = function (request, response) {
     response.render("pc.hbs")
 }
+
