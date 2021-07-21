@@ -14,12 +14,17 @@
                 <p>CPU name: {{this.CPU_name}}</p> 
                 <p>{{this.description}}</p>   
                 <p>price: {{this.CPU_price}}</p>    
-                <button type="submit">add</button>
+                <button onclick="cpu({{this.CPU_price}})">add</button>
             </div>    
         {{/each}}
     </div>
     
     
-    <script src="../index.js"></script>
+    <script>
+        function cpu(cpu_price) {
+            let cpuPrice = Number(cpu_price)
+            localStorage.setItem("cpuPrice", cpuPrice)
+        }
+    </script>
 </body>
 </html>

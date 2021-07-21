@@ -13,11 +13,16 @@
             <div class="card">
                 <p>{{this.mouse_name}}</p>    
                 <p>Price: {{this.mouse_price}}</p>    
-                <button type="submit">add</button>
+                <button type="submit" onclick="mouse({{this.mouse_price}})">add</button>
             </div>    
         {{/each}}
     </div>
     
-    <script src="../index.js"></script>
+    <script>
+        function mouse(mouse_price) {
+            let mousePrice = Number(mouse_price)
+            localStorage.setItem("mousePrice", mousePrice)
+        }
+    </script>
 </body>
 </html>

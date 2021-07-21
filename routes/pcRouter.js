@@ -7,4 +7,5 @@ pcRouter.get("/cpu", pcController.getCPU)
 pcRouter.get("/ram", pcController.getRAM)
 pcRouter.get("/keyboard", pcController.getKbrd)
 pcRouter.get("/mouse", pcController.getMouse)
+pcRouter.get("/", pcController.getPC)
 module.exports = pcRouter

@@ -14,11 +14,16 @@
                 <p>RAM memory type: {{this.RAM_memory_type}}</p>    
                 <p>Size: {{this.RAM_size}}</p>    
                 <p>price: {{this.RAM_price}}</p>    
-                <button type="submit">add</button>
+                <button type="submit" onclick="ram({{this.RAM_price}})">add</button>
             </div>
         {{/each}}
     </div>
     
-    <script src="../index.js"></script>
+    <script>
+        function ram(ram_price) {
+            let ramPrice = Number(ram_price)
+            localStorage.setItem("ramPrice", ramPrice)
+        }
+    </script>
 </body>
 </html>

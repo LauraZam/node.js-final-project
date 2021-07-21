@@ -13,11 +13,16 @@
             <div class="card">
                 <p>{{this.kbrd_name}}</p>    
                 <p>Price: {{this.kbrd_price}}</p>    
-                <button type="submit">add</button>
+                <button type="submit" onclick="kbrd({{this.kbrd_price}})">add</button>
             </div>    
         {{/each}}
     </div>
     
-    <script src="../index.js"></script>
+    <script>
+        function kbrd(kbrd_price) {
+            let kbrdPrice = Number(kbrd_price)
+            localStorage.setItem("kbrdPrice", kbrdPrice)
+        }
+    </script>
 </body>
 </html>

@@ -17,3 +17,6 @@ exports.getKbrd = function (request, response) {
 exports.getMouse = function (request, response) {
     db.getMouse(request, response);
 }
+exports.getPC = function (request, response) {
+    db.getPC(request, response);
+}

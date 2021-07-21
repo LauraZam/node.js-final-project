@@ -14,11 +14,17 @@
                 <input type="number" value="{{this.hdd_id}}" name="hdd_id" hidden>
                 <p>HDD size: {{this.HDD_size}}</p>    
                 <p>Price: {{this.HDD_price}}</p>    
-                <button type="submit" onclick="addHDD({{this.hdd_id}})">add</button>
+                <button onclick="hdd({{this.HDD_price}})">add</button>
             </div>    
         {{/each}}
     </div>
     
-    <script src="../index.js"></script>
+    <script>
+        function hdd(hdd_price) {
+            let hddPrice = Number(hdd_price)
+            localStorage.setItem("hddPrice", hddPrice)
+            console.log(hddPrice);
+        }
+    </script>
 </body>
 </html>
