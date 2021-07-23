@@ -14,7 +14,7 @@
     <div class="card">
         <input type="text" placeholder="name" id="user" name="username">
         <p id="price"></p>
-        <button onclick="buy()">buy</button>
+        <button onclick="buy()">BUY</button>
     </div>
     <div id="cart">
 
@@ -41,8 +41,9 @@
                     localStorage.removeItem("mousePrice")
                     localStorage.setItem("price", price)
                     localStorage.setItem("username", nameInput)
+                    location.replace("http://localhost:8080/pc/db")
             }
-            location.replace("http://localhost:8080/pc/db")
+            
         }
     </script>
 </body>

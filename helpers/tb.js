@@ -1,24 +1,16 @@
-const TelegramApi=require('node-telegram-bot-api')
-
-const token ='1912952094:AAGtzz5g6im5Nrs8zf0PFfEVxCZ3bT3lJKA'
-
-const bot=new TelegramApi(token, {polling: true})
-
-bot.on('message', msg => {
-    const text=msg.text;
-    const chatid=msg.chat.id;
+const TelegramBot = require('node-telegram-bot-api');
+const token = '1857851823:AAF4PT1V1zUuDCfs7W81KAQcTn5-Lm4f-yg';
+let fs = require("fs")
+const bot = new TelegramBot(token, { polling: true });
+let fileContent = fs.readFileSync("../db/users.txt")
+let usersArray = JSON.parse(fileContent)
+console.log(usersArray);
+// bot.on('message', (msg) => {
+//     const chatId = msg.chat.id;
+//     const firstName = msg.chat.first_name;
+//     const message = msg.text;
     
-    // if(text=== '/start'){
-    //     bot.sendMessage(chatid, `привет, ${msg.from.first_name}`)
-    // }
-   
-    // if(text=== '/info'){
-    //     bot.sendMessage(chatid, `тебе , ${msg.from.age}`)
-    // }
-    if (text === username) {
-        bot.sendMessage(username);
-        bot.sendMessage(price)
-    }
-
     
-})
+    
+//     // bot.sendMessage(chatId, 'Received your message')
+// })
