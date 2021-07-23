@@ -31,18 +31,18 @@
         function buy(pricePar){
             let nameInput = document.getElementById("user").value
             let cart = document.getElementById("cart");
-            cart.append(`
-                <p>${nameInput}, покупка на сумму ${price} успешно совершена.</p>
-                <p></p>
-
-            `)
-                localStorage.removeItem("hddPrice")
-                localStorage.removeItem("cpuPrice")
-                localStorage.removeItem("ramPrice")
-                localStorage.removeItem("kbrdPrice")
-                localStorage.removeItem("mousePrice")
-                localStorage.setItem("price", price)
-                localStorage.setItem("username", nameInput)
+            if(hddPrice === 0 || cpuPrice === 0 || ramPrice === 0 || mousePrice === 0 || kbrdPrice === 0){
+                alert("Вы должны выбрать все компоненты(hdd, ram, cpu, mouse, keyboard)")
+            }else{
+                    localStorage.removeItem("hddPrice")
+                    localStorage.removeItem("cpuPrice")
+                    localStorage.removeItem("ramPrice")
+                    localStorage.removeItem("kbrdPrice")
+                    localStorage.removeItem("mousePrice")
+                    localStorage.setItem("price", price)
+                    localStorage.setItem("username", nameInput)
+            }
+            location.replace("http://localhost:8080/pc/db")
         }
     </script>
 </body>

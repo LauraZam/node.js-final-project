@@ -6,10 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/pc/db" method="post">
-        <input type="text" name="username" id="username">
-        <input type="number" name="price" id="price">
-    </form>
+    {{>styles}}
+    <div class="card">
+        <form action="/pc/db" method="post">
+            <input type="text" name="username" id="username"><br>
+            <input type="number" name="price" id="price"><br>
+            <button type="submit" id="special">ПОДТВЕРДИТЬ</button>
+        </form>
+    </div>
     
     <script>
         let username = localStorage.getItem("username")
