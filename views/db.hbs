@@ -10,7 +10,7 @@
     <div class="card">
         <form action="/pc/db" method="post">
             <input type="text" name="username" id="username"><br>
-            <input type="number" name="price" id="price"><br>
+            <input type="number" name="price" id="price" readonly><br>
             <button type="submit" id="special">ПОДТВЕРДИТЬ</button>
         </form>
     </div>
@@ -20,6 +20,7 @@
         let price = localStorage.getItem("price")
         document.getElementById("username").value = username;
         document.getElementById("price").value = price;
+
     </script>
 </body>
 </html>
